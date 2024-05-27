@@ -8,7 +8,7 @@ const App = (props: Props) => {
   return (
     <>
       <CustomHeader title="LOGO" />
-      {/* <Products /> */}
+      <Products />
     </>
   )
 }

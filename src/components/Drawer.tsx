@@ -8,10 +8,9 @@ const Drawer = () => {
   console.log(drawerPosition)
 
   const navigationView = () => (
-    <View style={[styles.container, styles.navigationContainer]}>
-      <Text style={styles.paragraph}>I'm in the Drawer!</Text>
+    <View style={[styles.container, styles.navigationContainer, ]}>
       <Button
-        title="Close drawer"
+        title="Content"
         onPress={() => drawer.current?.closeDrawer()}
       />
     </View>
@@ -30,7 +29,7 @@ const Drawer = () => {
           Swipe from the side or press the button below to see it!
         </Text>
         <Button
-          title="Open drawer"
+          title="LOGO"
           onPress={() => drawer.current?.openDrawer()}
         />
       </View>
@@ -43,13 +42,15 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    zIndex: 11111111111,
     padding: 16,
   },
   navigationContainer: {
     backgroundColor: '#ecf0f1',
-    flex: 1,
-    justifyContent: 'center',
+    flex: 3,
+    justifyContent: 'space-between',
     alignItems: 'center',
+    height: 700
   },
   paragraph: {
     padding: 16,

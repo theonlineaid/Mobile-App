@@ -9,11 +9,12 @@ interface Props {
 const CustomHeader: React.FC<Props> = ({ title }) => {
   return (
     <>
-      {/* <Drawer /> */}
+      
       <View style={styles.header1}>
-
         <Text style={styles.title1}>{title}</Text>
       </View>
+        <Drawer />
+      
     </>
   );
 };
@@ -23,6 +24,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#f8f8f8',
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
+    padding: 15,
+    justifyContent: 'space-between'
   },
   title1: {
     fontSize: 20,
