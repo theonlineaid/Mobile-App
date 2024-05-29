@@ -1,16 +1,29 @@
-import React from 'react'
+import React from 'react';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
 import Products from './src/components/Products';
-import CustomHeader from './src/components/CustomHeader'
+import CustomHeader from './src/components/CustomHeader';
+import Drawer from './src/components/Drawer';
 
-type Props = {}
-
-const App = (props: Props) => {
+const App = () => {
   return (
-    <>
+    <SafeAreaView style={styles.container}>
       <CustomHeader title="LOGO" />
-      <Products />
-    </>
-  )
-}
+      <View style={styles.content}>
+        <Drawer />
+        {/* <Products /> */}
+      </View>
+    </SafeAreaView>
+  );
+};
 
-export default App
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  content: {
+    flex: 1,
+    flexDirection: 'column',
+  },
+});
+
+export default App;

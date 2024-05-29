@@ -5,12 +5,10 @@ const Drawer = () => {
   const drawer = useRef<DrawerLayoutAndroid>(null);
   const [drawerPosition, setDrawerPosition] = useState<'left' | 'right'>('left');
 
-  console.log(drawerPosition)
-
   const navigationView = () => (
-    <View style={[styles.container, styles.navigationContainer, ]}>
+    <View style={[styles.container, styles.navigationContainer]}>
       <Button
-        title="Content"
+        title="Close drawer"
         onPress={() => drawer.current?.closeDrawer()}
       />
     </View>
@@ -19,43 +17,42 @@ const Drawer = () => {
   return (
     <DrawerLayoutAndroid
       ref={drawer}
-      drawerWidth={300} // Ensure drawerWidth is set
+      drawerWidth={300}
       drawerPosition={drawerPosition}
       renderNavigationView={navigationView}
+      style={styles.drawer}
     >
-      <View style={styles.container}>
-        <Text style={styles.paragraph}>Drawer on the {drawerPosition}!</Text>
-        <Text style={styles.paragraph}>
-          Swipe from the side or press the button below to see it!
-        </Text>
-        <Button
-          title="LOGO"
-          onPress={() => drawer.current?.openDrawer()}
-        />
+      <View style={styles.innerContainer}>
+        <View style={styles.buttonContainer}>
+          <Button title="Open drawer" onPress={() => drawer.current?.openDrawer()} />
+        </View>
       </View>
     </DrawerLayoutAndroid>
   );
 };
 
 const styles = StyleSheet.create({
+  drawer: {
+    flex: 1,
+  },
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    zIndex: 11111111111,
     padding: 16,
+  },
+  innerContainer: {
+    flex: 1,
+    justifyContent: 'flex-start', // Align items to the top
+  },
+  buttonContainer: {
+    height: 50, // Fixed height for the button container
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   navigationContainer: {
-    backgroundColor: '#ecf0f1',
-    flex: 3,
-    justifyContent: 'space-between',
+    backgroundColor: '#fff',
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    height: 700
-  },
-  paragraph: {
-    padding: 16,
-    fontSize: 15,
-    textAlign: 'center',
   },
 });
 

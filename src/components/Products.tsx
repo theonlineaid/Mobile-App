@@ -1,14 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-  FlatList,
-  ActivityIndicator,
-  Image,
-} from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet, Text, View, FlatList, ActivityIndicator, Image } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,7 +9,6 @@ const styles = StyleSheet.create({
   itemContainer: {
     flex: 1,
     margin: 10,
-    // backgroundColor: '#f9f9f9',
     borderRadius: 8,
     padding: 10,
     alignItems: 'center',

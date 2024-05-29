@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Drawer from './Drawer';
 
 interface Props {
   title: string;
@@ -9,12 +8,11 @@ interface Props {
 const CustomHeader: React.FC<Props> = ({ title }) => {
   return (
     <>
-      
+
       <View style={styles.header1}>
         <Text style={styles.title1}>{title}</Text>
       </View>
-        <Drawer />
-      
+
     </>
   );
 };
@@ -25,7 +23,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
     padding: 15,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    // flex: 1,
+    // alignItems: 'center',
   },
   title1: {
     fontSize: 20,
