@@ -73,7 +73,7 @@ const Products = (): React.JSX.Element => {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <StatusBar barStyle="dark-content" />
       <FlatList
         data={data}
